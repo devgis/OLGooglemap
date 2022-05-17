@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="ol/ol.js"></script>
+    <link href="ol/ol.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <script type="text/javascript">
+        window.onload = function () {
+            var googleMapLayer = new ol.layer.Tile({
+                source: new ol.source.XYZ({
+                    url: 'http://www.google.cn/maps/vt/pb=!1m4!1m3!1i{z}!2i{x}!3i{y}!2m3!1e0!2sm!3i380072576!3m8!2szh-CN!3scn!5e1105!12m4!1e68!2m2!1sset!2sRoadmap!4e0!5m1!1e0'
+                })
+            });
+ 
+            var map = new ol.Map({
+                layers: [googleMapLayer],
+                view: new ol.View({
+                    center: [106.51, 29.55],
+                    projection: 'EPSG:4326',
+                    zoom: 10
+                }),
+                target: 'map'
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
